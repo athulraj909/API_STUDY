@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
-from .models import Person
+from .models import Person,ChatRoom,Message
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -28,3 +28,5 @@ class PersonSerializer(serializers.ModelSerializer):
             password=user_data['password']
         )
         return Person.objects.create(user_id=user, **validated_data)
+    
+

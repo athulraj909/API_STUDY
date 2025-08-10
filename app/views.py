@@ -1,11 +1,11 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
-from .models import Person
+from .models import Person,ChatRoom,Message
 from django.http import JsonResponse
 from rest_framework.views import APIView
 from django.contrib.auth.hashers import make_password
 from rest_framework.permissions import IsAuthenticated
-from .serializers import PersonSerializer
+from .serializers import PersonSerializer,ChatRoomSerializer,MessageSerializer
 from rest_framework import status
 
 
@@ -38,3 +38,5 @@ class Profile_user(APIView):
         except Exception as e:
             print(e)
             return JsonResponse({"status": 0, "error": "Something went wrong"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        
+
