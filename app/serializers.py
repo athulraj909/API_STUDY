@@ -28,5 +28,17 @@ class PersonSerializer(serializers.ModelSerializer):
             password=user_data['password']
         )
         return Person.objects.create(user_id=user, **validated_data)
+
+
+class ChatRoomSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ChatRoom
+        fields = '__all__'
+
+class MessageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Message
+        fields = '__all__'
+
     
 
