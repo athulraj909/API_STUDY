@@ -28,4 +28,9 @@ urlpatterns = [
     path('register/',Register.as_view(),name='register'),
     path('profile/',Profile_user.as_view(),name='profile'),
 
+    # Google SignIn
+    path('google-login/', GoogleLogin.as_view(), name='google_login'),
+
+
+
 ]
